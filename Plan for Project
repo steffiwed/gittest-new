@@ -108,3 +108,49 @@ Beispiel-HTML:
 ````
 
 Empfehlung: für die Menge entweder ein Auswahlfeld (Knäuel vs Gramm) oder zwei Felder mit Priorisierung; Validierung/Umrechnung im JS.
+
+Statisch: Marke, Material, Gramm, Farbe
+Dynamisch: Vorhandene Menge
+
+Tabelle CSV
+<form id="yarn-selects">
+  <label>Marke
+    <select name="brand" required>
+      <option value="Drops">Drops</option>
+      <option value="Schachenmayr">Schachenmayr</option>
+      <option value="Hobbii">Hobbii</option>
+    </select>
+  </label>
+
+  <label>Gramm (pro Knäuel)
+    <select name="grams_per_skein" required>
+      <option value="25">25g</option>
+      <option value="50">50g</option>
+      <option value="100">100g</option>
+    </select>
+  </label>
+
+  <label>Farbe
+    <select name="color" required>
+      <option value="rot">rot</option>
+      <option value="blau">blau</option>
+      <option value="gelb">gelb</option>
+      <option value="weiss">weiß</option>
+    </select>
+  </label>
+
+  <fieldset>
+    <legend>Vorhandene Menge</legend>
+    <label>Anzahl
+      <input type="number" name="quantity" min="0" step="1" placeholder="z. B. 5">
+    </label>
+    <label>Einheit
+      <select name="quantity_unit">
+        <option value="skeins">Knäuel</option>
+        <option value="grams">g</option>
+      </select>
+    </label>
+  </fieldset>
+
+  <button type="submit">➕ Garn hinzufügen</button>
+</form>
