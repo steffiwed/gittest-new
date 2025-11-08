@@ -2,3 +2,13 @@ Projekt: Garn Tracker
  Der Yarn Tracker ist eine kleine Website, 
  auf der Stricker:innen oder Häkler:innen ihren 
  Wollvorrat („Stash“) verwalten können.
+
+ Eingaben:
+ •	Marke (z. B. Drops, Schachenmayr)
+•	Name (z. B. Merino Extra Fine)
+•	Material (z. B. Merino, Baumwolle, Alpaka, Acryl …) 
+•	Lauflänge (in Metern pro Knäuel)
+•	Gewicht (in Gramm pro Knäuel)
+•	Farbe
+•	Projektidee (z. B. Schal, Pullover)
+•	Vorhandene Menge (z. B. 5 Knäuel oder 250 g)
