@@ -12,3 +12,14 @@ Projekt: Garn Tracker
 •	Farbe
 •	Projektidee (z. B. Schal, Pullover)
 •	Vorhandene Menge (z. B. 5 Knäuel oder 250 g)
+
+Beim Klick auf „➕ Garn hinzufügen“ wird eine neue 
+Zeile in der Übersichtstabelle erzeugt.
+
+Zusätzlich gibt es ein Suchfeld, in das man eine 
+Anleitung oder ein gewünschtes Projekt eingeben kann 
+(z. B. „Pullover aus Merino mit 800 m Lauflänge“).
+Das System durchsucht dann alle gespeicherten Garne 
+und zeigt nur diejenigen an, die nach Material, 
+Lauflänge und vorhandener Menge zu den Anforderungen 
+passen.
