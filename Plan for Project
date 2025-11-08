@@ -23,3 +23,88 @@ Das System durchsucht dann alle gespeicherten Garne
 und zeigt nur diejenigen an, die nach Material, 
 Lauflänge und vorhandener Menge zu den Anforderungen 
 passen.
+
+steffiwed: welche html inputs wären für diese eigaben sinnvoll?
+
+GitHub Copilot: Hier Vorschlag für sinnvolle HTML-Inputs (knapp) plus ein Beispielformular:
+
+- Marke, Name: text
+- Material: select (vordefinierte Optionen + "Andere")
+- Lauflänge (m/Knäuel): number (step="0.1" oder "1")
+- Gewicht (g/Knäuel): number (step="1")
+- Farbe: input type="color" + optional Text für Farbnamen
+- Projektidee / Notiz: text / textarea / datalist für Vorschläge
+- Vorhandene Menge: number + Unit-Auswahl (Knäuel oder Gramm) — alternativ zwei Felder
+- Foto (optional): file (accept="image/*")
+- Suche: input type="search" + optionale Filter (material, min/max Lauflänge, min Menge)
+
+Beispiel-HTML:
+
+````html
+<form id="yarn-form">
+  <label>Marke
+    <input type="text" name="brand" required>
+  </label>
+
+  <label>Name
+    <input type="text" name="name" required>
+  </label>
+
+  <label>Material
+    <select name="material" required>
+      <option value="">-- wählen --</option>
+      <option>Merino</option>
+      <option>Baumwolle</option>
+      <option>Alpaka</option>
+      <option>Acryl</option>
+      <option>Andere</option>
+    </select>
+  </label>
+
+  <label>Lauflänge (m / Knäuel)
+    <input type="number" name="length_m" min="0" step="0.1" required>
+  </label>
+
+  <label>Gewicht (g / Knäuel)
+    <input type="number" name="weight_g" min="0" step="1" required>
+  </label>
+
+  <label>Farbe
+    <input type="color" name="color_hex">
+    <input type="text" name="color_name" placeholder="Farbename (z. B. 'Petrol')">
+  </label>
+
+  <label>Projektidee
+    <input list="projects" name="project_idea" placeholder="z. B. Schal">
+    <datalist id="projects">
+      <option>Schal</option>
+      <option>Pullover</option>
+      <option>Mütze</option>
+    </datalist>
+  </label>
+
+  <fieldset>
+    <legend>Vorhandene Menge</legend>
+    <label>Anzahl Knäuel
+      <input type="number" name="qty_skeins" min="0" step="1">
+    </label>
+    <label>oder Gewicht (g)
+      <input type="number" name="qty_grams" min="0" step="1">
+    </label>
+  </fieldset>
+
+  <label>Foto (optional)
+    <input type="file" name="photo" accept="image/*">
+  </label>
+
+  <button type="submit">➕ Garn hinzufügen</button>
+</form>
+
+<!-- Suche -->
+<label>Suche
+  <input type="search" id="stash-search" placeholder="z. B. 'Pullover Merino 800 m'">
+</label>
+<!-- optionale Filter: Material, min/max Lauflänge, min Menge -->
+````
+
+Empfehlung: für die Menge entweder ein Auswahlfeld (Knäuel vs Gramm) oder zwei Felder mit Priorisierung; Validierung/Umrechnung im JS.
